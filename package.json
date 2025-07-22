@@ -1,28 +1,35 @@
 {
-  "name": "metrotoners",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "15.3.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.1.1",
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.5",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+	"name": "metrotoners",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "tinacms dev -c \"next dev --turbopack\"",
+		"build": "tinacms build && next build",
+		"start": "next start",
+		"lint": "next lint",
+		"format": "biome format --write"
+	},
+	"dependencies": {
+		"@radix-ui/react-navigation-menu": "^1.2.13",
+		"next": "15.3.5",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tinacms": "^2.8.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.1",
+		"@eslint/eslintrc": "^3",
+		"@iconify-json/material-symbols": "^1.2.30",
+		"@iconify/react": "^6.0.0",
+		"@iconify/tailwind4": "^1.0.6",
+		"@tailwindcss/postcss": "^4",
+		"@tinacms/cli": "^1.10.1",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "15.3.5",
+		"tailwindcss": "^4",
+		"typescript": "^5"
+	}
 }
