@@ -30,6 +30,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.3.1
+      '@iconify-json/arcticons':
+        specifier: ^1.2.31
+        version: 1.2.31
       '@iconify-json/material-symbols':
         specifier: ^1.2.30
         version: 1.2.30
@@ -791,6 +794,9 @@ packages:
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+
+  '@iconify-json/arcticons@1.2.31':
+    resolution: {integrity: sha512-bX1NcuPtwdrkpLjoIUbzI80ifYObUGVBujea3lcRcqCg6J9bdQtdi9JYlP7F41V9DuqsHwdqXFIsG7j1m+2tnw==}
 
   '@iconify-json/material-symbols@1.2.30':
     resolution: {integrity: sha512-3dA1jxkCd8LqEaAWjwQ5tob4pJNKE59Bz604AL1GP3Kyv//pR3un3cIyAUWOFQS1lz0vKKkn0BKOCmcUDi1G8A==}
@@ -6767,6 +6773,10 @@ snapshots:
   '@humanwhocodes/retry@0.4.3': {}
 
   '@iarna/toml@2.2.5': {}
+
+  '@iconify-json/arcticons@1.2.31':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/material-symbols@1.2.30':
     dependencies:
