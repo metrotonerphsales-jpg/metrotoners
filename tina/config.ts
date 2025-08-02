@@ -67,6 +67,18 @@ export default defineConfig({
 							},
 						},
 					},
+					{
+						type: 'string',
+						name: 'shopee_url',
+						label: 'Shopee URL',
+						required: true,
+					},
+					{
+						type: 'string',
+						name: 'facebook_url',
+						label: 'Facebook URL',
+						required: true,
+					},
 				],
 				ui: {
 					allowedActions: {
