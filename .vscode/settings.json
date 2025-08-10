@@ -1,3 +1,8 @@
 {
-	"cSpell.words": ["Metrotoners", "shopee"]
+	"cSpell.words": ["Metrotoners", "shopee"],
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
