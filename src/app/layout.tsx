@@ -3,7 +3,7 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from './icon.svg'
+import Logo from '@/../public/logo-only.svg'
 import { ptSerif, notoSerif, outfit } from '@/fonts'
 import { DesktopNavBar } from './desktop-nav-bar'
 import { MobileNavBar } from './mobile-nav-bar'
@@ -45,7 +45,7 @@ export default async function RootLayout({
 			<body className="font-tertiary">
 				<header className="font-primary bg-primary relative z-5 text-white shadow-md">
 					<div className="text-secondary-950 container flex flex-col items-center">
-						<Link href="/">
+						<Link href="/" className="my-6">
 							<Image
 								src={Logo}
 								alt="Logo with big MT letters and a small text in between Metrotoners"
@@ -57,21 +57,10 @@ export default async function RootLayout({
 					</div>
 				</header>
 				<main>{children}</main>
-				<footer className="bg-secondary text-white">
+				<footer className="bg-[#070e1d] text-white">
 					<div className="font-primary container flex flex-wrap gap-x-10 gap-y-8 py-10 md:justify-center md:gap-x-14 lg:gap-x-30 xl:gap-x-14">
 						<div className="self-center text-center">
-							{/* <Image
-								src={Logo}
-								alt="blue globe-like design drawn with longtitude and latitudes"
-								width={150}
-								className="mx-auto"
-							/> */}
-							<p className="mt-2 text-3xl font-bold tracking-widest">
-								Metrotoners
-							</p>
-							<p className="font-secondary text-sm font-light">
-								Business Machines Services Corp.
-							</p>
+							<Image src={Logo} alt="" width={160} className="mx-auto" />
 						</div>
 						<nav className="flex flex-col justify-center space-y-3 font-bold xl:border-r-1 xl:pr-10">
 							{navItems.map(item => (
