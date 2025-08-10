@@ -1,5 +1,6 @@
 'use client'
 
+import { Input } from "@/components/ui/input"
 import { navItems } from './nav-items'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -19,6 +20,7 @@ export function DesktopNavBar(props: HTMLAttributes<HTMLDivElement>) {
 					{item.text}
 				</Link>
 			))}
+			<Input type="search" name="search" placeholder="Search all products here" />
 		</nav>
 	)
 }
