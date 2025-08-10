@@ -43,8 +43,8 @@ export default async function RootLayout({
 			className={`${ptSerif.variable} ${notoSerif.variable} ${outfit.variable}`}
 		>
 			<body className="font-tertiary">
-				<header className="font-primary shadow-md relative z-5 bg-primary text-white">
-					<div className="container flex flex-col items-center text-secondary-950">
+				<header className="font-primary bg-primary relative z-5 text-white shadow-md">
+					<div className="text-secondary-950 container flex flex-col items-center">
 						<Link href="/">
 							<Image
 								src={Logo}
@@ -52,29 +52,29 @@ export default async function RootLayout({
 								width={160}
 							/>
 						</Link>
-						<DesktopNavBar className="gap-x-10 max-lg:hidden flex text-xl mb-2 whitespace-nowrap" />
+						<DesktopNavBar className="mb-2 flex gap-x-10 text-xl whitespace-nowrap max-lg:hidden" />
 						<MobileNavBar />
 					</div>
 				</header>
 				<main>{children}</main>
 				<footer className="bg-secondary text-white">
-					<div className="container font-primary flex py-10 gap-x-10 gap-y-8 flex-wrap md:gap-x-14 md:justify-center lg:gap-x-30 xl:gap-x-14">
-						<div className="text-center self-center">
+					<div className="font-primary container flex flex-wrap gap-x-10 gap-y-8 py-10 md:justify-center md:gap-x-14 lg:gap-x-30 xl:gap-x-14">
+						<div className="self-center text-center">
 							{/* <Image
 								src={Logo}
 								alt="blue globe-like design drawn with longtitude and latitudes"
 								width={150}
 								className="mx-auto"
 							/> */}
-							<p className="text-3xl mt-2 font-bold tracking-widest">
+							<p className="mt-2 text-3xl font-bold tracking-widest">
 								Metrotoners
 							</p>
-							<p className="text-sm font-light font-secondary">
+							<p className="font-secondary text-sm font-light">
 								Business Machines Services Corp.
 							</p>
 						</div>
-						<nav className="space-y-3 flex flex-col xl:pr-10 xl:border-r-1 font-bold justify-center">
-							{navItems.map((item) => (
+						<nav className="flex flex-col justify-center space-y-3 font-bold xl:border-r-1 xl:pr-10">
+							{navItems.map(item => (
 								<Link key={item.link} href={item.link}>
 									{item.text}
 								</Link>
@@ -82,8 +82,8 @@ export default async function RootLayout({
 						</nav>
 						<div className="font-secondary space-y-4 text-sm">
 							<div className="space-y-1/2">
-								<div className="flex gap-x-2 justify-between">
-									<p className="font-medium text-base">Get in touch:</p>
+								<div className="flex justify-between gap-x-2">
+									<p className="text-base font-medium">Get in touch:</p>
 									<div className="gap-x-2 pt-1">
 										<a href={facebook_url} className="footer-icon">
 											<i className="i-[arcticons--facebook]" />
@@ -95,21 +95,21 @@ export default async function RootLayout({
 								</div>
 								<hr />
 								<p>
-									<i className="text-base mr-1 i-[material-symbols--alternate-email-rounded]" />{' '}
+									<i className="i-[material-symbols--alternate-email-rounded] mr-1 text-base" />{' '}
 									<a className="underline" href={`mailto:${email}`}>
 										{email}
 									</a>
 								</p>
 							</div>
-							{addresses.map((a) => (
+							{addresses.map(a => (
 								<div key={a.name} className="space-y-1/2">
 									<p>
-										<i className="text-base mr-1 i-[material-symbols--call]" />
+										<i className="i-[material-symbols--call] mr-1 text-base" />
 										{a.tel}
 									</p>
 									<p className="font-medium">{a.name}:</p>
 									<p>
-										<i className="text-base mr-1 i-[material-symbols--location-on-rounded]" />
+										<i className="i-[material-symbols--location-on-rounded] mr-1 text-base" />
 										{a.address}
 									</p>
 								</div>

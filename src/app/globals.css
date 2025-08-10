@@ -1,15 +1,15 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 @plugin "@iconify/tailwind4" {
-	prefix: "i";
+	prefix: 'i';
 }
 
 @theme {
-	--font-primary: "var(--font-primary)";
-	--font-secondary: "var(--font-secondary)";
-	--font-tertiary: "var(--font-tertiary)";
+	--font-primary: 'var(--font-primary)';
+	--font-secondary: 'var(--font-secondary)';
+	--font-tertiary: 'var(--font-tertiary)';
 	--breakpoint-xs: 400px;
 }
 
@@ -55,7 +55,7 @@
 }
 
 @utility footer-icon {
-	@apply transition-transform active:scale-105 hover:scale-110 text-2xl leading-0;
+	@apply text-2xl leading-0 transition-transform hover:scale-110 active:scale-105;
 }
 
 i {
@@ -63,15 +63,15 @@ i {
 }
 
 .head-1 {
-	@apply text-4xl leading-10 sm:text-5xl sm:leading-14 font-bold font-primary;
+	@apply font-primary text-4xl leading-10 font-bold sm:text-5xl sm:leading-14;
 
 	& + .subtitle {
-		@apply max-w-prose font-secondary mt-6 text-lg leading-8;
+		@apply font-secondary mt-6 max-w-prose text-lg leading-8;
 	}
 }
 
 .head-2 {
-	@apply text-3xl leading-8 sm:text-4xl sm:leading-10 font-bold font-primary;
+	@apply font-primary text-3xl leading-8 font-bold sm:text-4xl sm:leading-10;
 }
 
 .text-gradient {
@@ -84,7 +84,7 @@ i {
 }
 
 .lds-ring div {
-	@apply box-border block absolute aspect-square border-4 border-solid rounded-full h-full;
+	@apply absolute box-border block aspect-square h-full rounded-full border-4 border-solid;
 	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 	border-color: #fff transparent transparent transparent;
 }
@@ -181,10 +181,10 @@ i {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }

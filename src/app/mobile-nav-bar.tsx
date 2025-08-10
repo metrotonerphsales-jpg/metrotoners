@@ -12,19 +12,19 @@ export function MobileNavBar() {
 			<NavigationMenu.List>
 				<NavigationMenu.Item>
 					<NavigationMenu.Trigger
-						className="outline-2 outline-solid outline-transparent hover:outline-primary-300 hover:bg-primary-100 transition-colors rounded-lg cursor-default"
+						className="hover:outline-primary-300 hover:bg-primary-100 cursor-default rounded-lg outline-2 outline-transparent transition-colors outline-solid"
 						aria-label="menu"
 						title="menu"
 					>
 						<i className="i-[material-symbols--menu-rounded] text-4xl" />
 					</NavigationMenu.Trigger>
-					<NavigationMenu.Content className="absolute top-16 left-0 w-full bg-white z-5 py-4 shadow-xl rounded-b-xl">
+					<NavigationMenu.Content className="absolute top-16 left-0 z-5 w-full rounded-b-xl bg-white py-4 shadow-xl">
 						<div className="container grid gap-y-2 text-base">
-							{navItems.map((item) => (
+							{navItems.map(item => (
 								<Link key={item.text} href={item.link} passHref legacyBehavior>
 									<NavigationMenu.Link
 										active={pathname === item.link}
-										className="py-1 border-l-2 px-3"
+										className="border-l-2 px-3 py-1"
 									>
 										{item.text}
 									</NavigationMenu.Link>
