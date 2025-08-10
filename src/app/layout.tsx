@@ -3,7 +3,7 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from './logo.png'
+import Logo from './icon.svg'
 import { ptSerif, notoSerif, outfit } from '@/fonts'
 import { DesktopNavBar } from './desktop-nav-bar'
 import { MobileNavBar } from './mobile-nav-bar'
@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 	generator: 'Next.js',
 	description:
 		'Licensed service center of Brother Philippines. Discover top-quality Brother printers and genuine toner cartridges for exceptional printing results. Shop now for reliable printing solutions and unbeatable deals!',
-	manifest: '/manifest.webmanifest',
 	keywords: ['toner', 'ink', 'drum', 'maintenance box'],
 	applicationName: 'Metrotoners',
 	category: 'stationery',
@@ -44,17 +43,16 @@ export default async function RootLayout({
 			className={`${ptSerif.variable} ${notoSerif.variable} ${outfit.variable}`}
 		>
 			<body className="font-tertiary">
-				<header className="font-primary shadow-md relative z-5 bg-primary-950 text-white">
-					<div className="container flex justify-between items-center text-secondary-950 h-17">
-						<Link href="/" className="flex items-center space-x-2">
+				<header className="font-primary shadow-md relative z-5 bg-primary text-white">
+					<div className="container flex flex-col items-center text-secondary-950">
+						<Link href="/">
 							<Image
 								src={Logo}
-								alt="blue globe-like design drawn with longtitude and latitudes"
-								width={60}
+								alt="Logo with big MT letters and a small text in between Metrotoners"
+								width={160}
 							/>
-							<span className="text-2xl tracking-widest">Metrotoners</span>
 						</Link>
-						<DesktopNavBar className="gap-x-7 max-lg:hidden flex h-full desktop" />
+						<DesktopNavBar className="gap-x-10 max-lg:hidden flex text-xl mb-2 whitespace-nowrap" />
 						<MobileNavBar />
 					</div>
 				</header>
