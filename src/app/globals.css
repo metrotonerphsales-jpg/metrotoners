@@ -11,20 +11,6 @@
 	--font-secondary: "var(--font-secondary)";
 	--font-tertiary: "var(--font-tertiary)";
 	--breakpoint-xs: 400px;
-
-	--color-primary-50: #e6f1ff;
-	--color-primary-100: #d1e5ff;
-	--color-primary-200: #adcdff;
-	--color-primary-300: #7baaff;
-	--color-primary-400: #4875ff;
-	--color-primary-500: #1f41ff;
-	--color-primary-600: #0016ff;
-	--color-primary-700: #001aff;
-	--color-primary-800: #0017da;
-	--color-primary-900: #0615a9;
-	--color-primary-950: #03084c;
-
-	--color-secondary: #070e1d;
 }
 
 :root {
@@ -36,9 +22,9 @@
 	--card-foreground: oklch(0.145 0 0);
 	--popover: oklch(1 0 0);
 	--popover-foreground: oklch(0.145 0 0);
-	--primary: oklch(0.205 0 0);
+	--primary: #03084c;
 	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.97 0 0);
+	--secondary: #070e1d;
 	--secondary-foreground: oklch(0.205 0 0);
 	--muted: oklch(0.97 0 0);
 	--muted-foreground: oklch(0.556 0 0);
@@ -76,22 +62,6 @@ i {
 	@apply align-middle;
 }
 
-nav a {
-	/* @apply hover:text--500 transition-colors; */
-
-	&[data-active] {
-		@apply border-l-primary-900;
-	}
-}
-
-nav.desktop a {
-	@apply flex items-center border-y-4 border-transparent px-1;
-
-	&.active {
-		@apply border-b-primary-900;
-	}
-}
-
 .head-1 {
 	@apply text-4xl leading-10 sm:text-5xl sm:leading-14 font-bold font-primary;
 
@@ -102,26 +72,6 @@ nav.desktop a {
 
 .head-2 {
 	@apply text-3xl leading-8 sm:text-4xl sm:leading-10 font-bold font-primary;
-}
-
-.btn {
-	/* @apply rounded-full px-4 py-2 inline-block font-secondary transition-colors cursor-pointer outline-0.5 outline-offset-3 outline-secondary-400; */
-
-	&.has-icons {
-		@apply inline-flex items-center gap-x-1.5;
-	}
-
-	&:disabled {
-		@apply cursor-not-allowed;
-	}
-
-	&.highlight {
-		@apply bg-primary-800 text-white [&:not(disabled)]:active:bg-primary-950 [&:not(disabled)]:hover:bg-primary-900 disabled:text-primary-900 disabled:bg-primary-200;
-	}
-}
-
-.btn-highlight {
-	@apply bg-primary-800 text-white [&:not(disabled)]:active:bg-primary-950 [&:not(disabled)]:hover:bg-primary-900 disabled:text-primary-900 disabled:bg-primary-200;
 }
 
 .text-gradient {
