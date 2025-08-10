@@ -20,7 +20,10 @@ export function DesktopNavBar(props: HTMLAttributes<HTMLDivElement>) {
 					{item.text}
 				</Link>
 			))}
-			<Input type="search" name="search" placeholder="Search all products here" />
+			<div className="inline-block relative">
+				<Input type="search" name="search" className="pr-6" placeholder="Search all products here" />
+				<i className="absolute top-1/2 -translate-y-1/2 right-2 i-[material-symbols--search] text-2xl" />
+			</div>
 		</nav>
 	)
 }
