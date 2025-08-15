@@ -2,6 +2,9 @@
 	"cSpell.words": ["Metrotoners", "shopee"],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.associations": {
+		"*.css": "postcss"
+	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
