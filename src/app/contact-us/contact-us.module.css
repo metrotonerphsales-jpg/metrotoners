@@ -1,0 +1,22 @@
+@reference '../globals.css';
+
+.section {
+	@apply xs:px-8 grid min-h-screen place-items-center px-4 py-12;
+}
+
+.section > div {
+	@apply grid w-full max-w-5xl grid-rows-2 overflow-hidden rounded-2xl bg-white shadow-[0_0_25px_rgba(0_0_0/0.25)] md:grid-cols-2 md:grid-rows-1;
+}
+
+.control {
+	@apply font-secondary;
+}
+
+.control label {
+	@apply block font-medium;
+}
+
+.control input,
+.control textarea {
+	@apply shadow-secondary w-full resize-none shadow-[0_2px_0_#1f2f98] transition-shadow duration-500 outline-none focus:shadow-[0_4px_0_#1f2f98];
+}
