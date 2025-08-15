@@ -87,6 +87,26 @@ export default defineConfig({
 					},
 				},
 			},
+			{
+				name: 'ContactPage',
+				label: 'Contact Us Page',
+				path: 'content/pages/contact-us',
+				fields: [
+					{
+						type: 'string',
+						name: 'maps_url',
+						label: 'Google Maps Embed Link',
+						required: true,
+					},
+				],
+				ui: {
+					allowedActions: {
+						create: false,
+						delete: false,
+					},
+					router: () => '/contact-us',
+				},
+			},
 		],
 	},
 })
