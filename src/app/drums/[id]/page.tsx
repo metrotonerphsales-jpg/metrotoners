@@ -12,11 +12,7 @@ export async function generateStaticParams() {
 }
 
 async function getDrum({ id }: Awaited<DrumPageProps['params']>) {
-	try {
-		return await client.queries.Drum({ relativePath: `${id}.md` })
-	} catch (error) {
-		return undefined
-	}
+	return await client.queries.Drum({ relativePath: `${id}.md` })
 }
 
 type DrumPageProps = {

@@ -1,4 +1,4 @@
-import { ProductBlock } from '@/components/product-block'
+// import { ProductBlock } from '@/components/product-block'
 
 export default function Home() {
 	return (

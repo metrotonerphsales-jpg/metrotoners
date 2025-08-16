@@ -12,11 +12,7 @@ export async function generateStaticParams() {
 }
 
 async function getBox({ id }: Awaited<MaintenanceBoxPageProps['params']>) {
-	try {
-		return await client.queries.MaintenanceBox({ relativePath: `${id}.md` })
-	} catch (error) {
-		return undefined
-	}
+	return await client.queries.MaintenanceBox({ relativePath: `${id}.md` })
 }
 
 type MaintenanceBoxPageProps = {

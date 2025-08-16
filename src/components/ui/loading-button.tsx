@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { Button, ButtonProps } from './button'
 import { LoadingIcon } from './loading-icon'
 
@@ -9,7 +10,11 @@ export function LoadingButton({
 }: ButtonProps & { loading: boolean; loaderClassName?: string }) {
 	return (
 		<Button {...props} disabled={loading}>
-			{loading ? <LoadingIcon className="h-full" thickness="sm" /> : children}
+			{loading ? (
+				<LoadingIcon className={cn('h-full', loaderClassName)} thickness="sm" />
+			) : (
+				children
+			)}
 		</Button>
 	)
 }

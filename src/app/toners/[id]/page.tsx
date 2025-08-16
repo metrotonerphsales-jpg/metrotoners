@@ -12,11 +12,7 @@ export async function generateStaticParams() {
 }
 
 async function getToner({ id }: Awaited<TonerPageProps['params']>) {
-	try {
-		return await client.queries.Toner({ relativePath: `${id}.md` })
-	} catch (error) {
-		return undefined
-	}
+	return await client.queries.Toner({ relativePath: `${id}.md` })
 }
 
 type TonerPageProps = {
