@@ -177,7 +177,7 @@ export default defineConfig({
 						required: true,
 					},
 					imageArraySchema,
-          {
+					{
 						type: 'string',
 						name: 'url',
 						label: 'URL',
@@ -219,7 +219,7 @@ export default defineConfig({
 						required: true,
 					},
 					imageArraySchema,
-          {
+					{
 						type: 'string',
 						name: 'url',
 						label: 'URL',
@@ -237,7 +237,7 @@ export default defineConfig({
 	},
 	search: {
 		tina: {
-      indexerToken: process.env.TINA_INDEXER_TOKEN,
+			indexerToken: process.env.TINA_INDEXER_TOKEN,
 			stopwordLanguages: ['eng'],
 		},
 		indexBatchSize: 50,
