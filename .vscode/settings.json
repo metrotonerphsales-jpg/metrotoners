@@ -1,5 +1,5 @@
 {
-	"cSpell.words": ["Metrotoners", "shopee"],
+	"cSpell.words": ["Metrotoners", "shopee", "stopword", "tinacms"],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"files.associations": {

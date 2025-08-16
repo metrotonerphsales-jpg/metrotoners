@@ -1,4 +1,5 @@
 import { defineConfig } from 'tinacms'
+import { imageArraySchema, imageSchema } from './schema/image'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -11,7 +12,6 @@ export default defineConfig({
 	branch,
 	clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
 	token: process.env.TINA_TOKEN,
-
 	build: {
 		outputFolder: 'admin',
 		publicFolder: 'public',
@@ -107,6 +107,129 @@ export default defineConfig({
 					router: () => '/contact-us',
 				},
 			},
+			{
+				name: 'Toner',
+				label: 'Toners',
+				path: 'content/toners',
+				ui: {
+					router: props => `/toners/${props.document._sys.filename}`,
+				},
+				fields: [
+					{
+						type: 'string',
+						name: 'name',
+						label: 'Name',
+						isTitle: true,
+						required: true,
+					},
+					{
+						type: 'string',
+						name: 'make',
+						label: 'Make',
+						required: true,
+					},
+					{
+						type: 'number',
+						name: 'price',
+						label: 'Price',
+						required: true,
+					},
+					imageArraySchema,
+					{
+						type: 'string',
+						name: 'url',
+						label: 'URL',
+					},
+					{
+						type: 'rich-text',
+						name: 'description',
+						label: 'Description',
+						isBody: true,
+						required: true,
+					},
+				],
+			},
+			{
+				name: 'Drum',
+				label: 'Drums',
+				path: 'content/drums',
+				ui: {
+					router: props => `/drums/${props.document._sys.filename}`,
+				},
+				fields: [
+					{
+						type: 'string',
+						name: 'name',
+						label: 'Name',
+						isTitle: true,
+						required: true,
+					},
+					{
+						type: 'string',
+						name: 'make',
+						label: 'Make',
+						required: true,
+					},
+					{
+						type: 'number',
+						name: 'price',
+						label: 'Price',
+						required: true,
+					},
+					imageSchema,
+					{
+						type: 'rich-text',
+						name: 'description',
+						label: 'Description',
+						isBody: true,
+						required: true,
+					},
+				],
+			},
+			{
+				name: 'MaintenanceBox',
+				label: 'Maintenance Boxes',
+				path: 'content/maintenance-boxes',
+				ui: {
+					router: props => `/maintenance-boxes/${props.document._sys.filename}`,
+				},
+				fields: [
+					{
+						type: 'string',
+						name: 'name',
+						label: 'Name',
+						isTitle: true,
+						required: true,
+					},
+					{
+						type: 'string',
+						name: 'make',
+						label: 'Make',
+						required: true,
+					},
+					{
+						type: 'number',
+						name: 'price',
+						label: 'Price',
+						required: true,
+					},
+					imageSchema,
+					{
+						type: 'rich-text',
+						name: 'description',
+						label: 'Description',
+						isBody: true,
+						required: true,
+					},
+				],
+			},
 		],
+	},
+	search: {
+		tina: {
+			stopwordLanguages: ['eng'],
+		},
+		indexBatchSize: 50,
+		maxSearchIndexFieldLength: 100,
 	},
 })
