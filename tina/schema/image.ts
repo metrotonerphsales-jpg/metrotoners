@@ -16,7 +16,6 @@ export const imageSchema = {
 			type: 'string',
 			name: 'alt',
 			label: 'Caption',
-			required: true,
 		},
 	],
 } satisfies Template['fields'][number]
