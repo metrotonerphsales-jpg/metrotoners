@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 	return toners?.map(t => ({ id: t._sys.filename })) ?? []
 }
 
-async function getToner({ id }: TonerPageProps['params']) {
+async function getToner({ id }: Awaited<TonerPageProps['params']>) {
 	try {
 		return await client.queries.Toner({ relativePath: `${id}.md` })
 	} catch (error) {
@@ -20,16 +20,14 @@ async function getToner({ id }: TonerPageProps['params']) {
 }
 
 type TonerPageProps = {
-	params: {
-		id: string
-	}
+	params: Promise<{ id: string }>
 }
 
 export async function generateMetadata(
 	{ params }: TonerPageProps,
 	parent: ResolvingMetadata
 ): Promise<Metadata> {
-	const toner = await getToner(params)
+	const toner = await getToner(await params)
 
 	if (!toner) notFound()
 
@@ -46,7 +44,7 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: TonerPageProps) {
-	const toner = await getToner(params)
+	const toner = await getToner(await params)
 
 	if (!toner) notFound()
 
