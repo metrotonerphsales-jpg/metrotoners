@@ -1,0 +1,21 @@
+@reference '../../../app/globals.css';
+
+.description {
+	@apply text-primary mt-6 text-lg;
+
+	& ul {
+		@apply ml-4 list-disc space-y-1;
+	}
+}
+
+.swiper {
+	:global(.thumbs) {
+		:global(.swiper-slide) {
+			@apply cursor-pointer border-2 transition-colors;
+		}
+
+		:global(.swiper-slide-active) {
+			@apply border-primary border-solid;
+		}
+	}
+}
