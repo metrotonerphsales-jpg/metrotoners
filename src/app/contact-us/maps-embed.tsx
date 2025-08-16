@@ -13,6 +13,9 @@ export function MapsEmbed({ data }: { data: ContactPageData }) {
 			data-tina-field={tinaField(ContactPage, 'maps_url')}
 			title="our google maps location"
 			className="h-full w-full"
+			allowFullScreen={false}
+			loading="lazy"
+			referrerPolicy="no-referrer-when-downgrade"
 			src={ContactPage.maps_url}
 		/>
 	)
