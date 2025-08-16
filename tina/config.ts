@@ -176,7 +176,12 @@ export default defineConfig({
 						label: 'Price',
 						required: true,
 					},
-					imageSchema,
+					imageArraySchema,
+          {
+						type: 'string',
+						name: 'url',
+						label: 'URL',
+					},
 					{
 						type: 'rich-text',
 						name: 'description',
@@ -213,7 +218,12 @@ export default defineConfig({
 						label: 'Price',
 						required: true,
 					},
-					imageSchema,
+					imageArraySchema,
+          {
+						type: 'string',
+						name: 'url',
+						label: 'URL',
+					},
 					{
 						type: 'rich-text',
 						name: 'description',
