@@ -1,5 +1,5 @@
 import client from '@/../tina/__generated__/client'
-import { getBoxes } from '../page'
+import { getBoxes } from '../api'
 import { notFound } from 'next/navigation'
 import { Metadata, ResolvingMetadata } from 'next'
 import { BoxPage } from './box-page'

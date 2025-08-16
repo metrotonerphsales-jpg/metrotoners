@@ -1,5 +1,5 @@
 import client from '@/../tina/__generated__/client'
-import { getToners } from '../page'
+import { getToners } from '../api'
 import { notFound } from 'next/navigation'
 import { Metadata, ResolvingMetadata } from 'next'
 import { TonerPage } from './toner-page'

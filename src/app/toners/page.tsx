@@ -1,18 +1,6 @@
 import { ProductBlock } from '@/components/product-block'
-import client from '@/../tina/__generated__/client'
-import { filterFalsy } from '@/lib/utils'
 import { Metadata } from 'next'
-
-export async function getToners() {
-	try {
-		const conn = await client.queries.TonerConnection()
-		const toners = conn.data.TonerConnection.edges?.map(toner => toner?.node)
-
-		return toners?.filter(filterFalsy)
-	} catch (err) {
-		console.error(err)
-	}
-}
+import { getToners } from './api'
 
 export const metadata: Metadata = {
 	title: 'Toners',

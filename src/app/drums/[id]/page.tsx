@@ -1,5 +1,5 @@
 import client from '@/../tina/__generated__/client'
-import { getDrums } from '../page'
+import { getDrums } from '../api'
 import { notFound } from 'next/navigation'
 import { Metadata, ResolvingMetadata } from 'next'
 import { DrumPage } from './drum-page'
