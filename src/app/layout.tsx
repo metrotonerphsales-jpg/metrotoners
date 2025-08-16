@@ -44,15 +44,16 @@ export default async function RootLayout({
 		>
 			<body className="font-tertiary">
 				<header className="font-primary bg-primary relative z-5 text-white shadow-md">
-					<div className="text-secondary-950 container flex flex-col items-center">
-						<Link href="/" className="my-6">
+					<div className="container flex min-h-20 items-center justify-between lg:flex-col">
+						<Link href="/" className="lg:my-5">
 							<Image
 								src={Logo}
 								alt="Logo with big MT letters and a small text in between Metrotoners"
 								width={160}
+								className="max-lg:w-20"
 							/>
 						</Link>
-						<DesktopNavBar className="mb-2 flex gap-x-10 text-xl whitespace-nowrap max-lg:hidden" />
+						<DesktopNavBar className="mb-4 flex items-center gap-x-10 text-xl whitespace-nowrap max-lg:hidden" />
 						<MobileNavBar />
 					</div>
 				</header>
@@ -64,7 +65,11 @@ export default async function RootLayout({
 						</div>
 						<nav className="flex flex-col justify-center space-y-3 font-bold xl:border-r-1 xl:pr-10">
 							{navItems.map(item => (
-								<Link key={item.link} href={item.link}>
+								<Link
+									key={item.link}
+									href={item.link}
+									className="underline-offset-4 hover:underline"
+								>
 									{item.text}
 								</Link>
 							))}

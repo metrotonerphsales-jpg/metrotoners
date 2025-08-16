@@ -47,7 +47,7 @@ export function ContactForm() {
 
 	return (
 		<form className="space-y-4 p-7 sm:p-12" onSubmit={handleSubmit}>
-			<h1 className="head-2 text-secondary-900 mb-5">Get in touch with us</h1>
+			<h1 className="head-2 text-secondary mb-5">Get in touch with us</h1>
 			<div className={styles.control}>
 				<label htmlFor="name">Name</label>
 				<input
