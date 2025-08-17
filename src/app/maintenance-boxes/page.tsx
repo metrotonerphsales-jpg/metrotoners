@@ -2,6 +2,8 @@ import { ProductBlock } from '@/components/product-block'
 
 import { Metadata } from 'next'
 import { getBoxes } from './api'
+import { Grid } from './grid'
+import { createFilterValues } from '@/lib/utils'
 
 export const metadata: Metadata = {
 	title: 'Maintenance Boxes',
@@ -12,8 +14,14 @@ export default async function MaintenanceBoxesPage() {
 	const boxes = await getBoxes()
 
 	if (!boxes) {
-		throw new Error('server error')
+		return (
+			<div>
+				<p>No Toners available right now.</p>
+			</div>
+		)
 	}
+
+	const filters = createFilterValues(['make'], boxes)
 
 	return (
 		<div className="container mx-auto px-4 py-8">
@@ -23,18 +31,8 @@ export default async function MaintenanceBoxesPage() {
 					All Boxes
 				</h1>
 			</div>
-			<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-				{boxes.map(box => (
-					<ProductBlock
-						key={box.name}
-						title={box.name}
-						subtitle={box.make}
-						price={box.price}
-						src={box.images[0].src}
-						alt={box.images[0].alt ?? ''}
-						url={`/maintenance-boxes/${box._sys.filename}`}
-					/>
-				))}
+			<div className="grid gap-4 lg:grid-cols-[240px_1fr]">
+				<Grid filters={filters} boxes={boxes} />
 			</div>
 		</div>
 	)
