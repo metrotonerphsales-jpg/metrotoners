@@ -129,6 +129,12 @@ export default defineConfig({
 						required: true,
 					},
 					{
+						type: 'string',
+						name: 'type',
+						label: 'Type',
+						required: true,
+					},
+					{
 						type: 'number',
 						name: 'price',
 						label: 'Price',
