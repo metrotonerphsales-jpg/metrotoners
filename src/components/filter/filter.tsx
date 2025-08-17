@@ -1,5 +1,6 @@
 'use client'
 
+import { FilterValues, SelectionValues } from '@/types'
 import { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
 type FilterProps = {

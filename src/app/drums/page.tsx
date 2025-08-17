@@ -1,4 +1,3 @@
-import { ProductBlock } from '@/components/product-block'
 import { Metadata } from 'next'
 import { getDrums } from './api'
 import { Grid } from './grid'

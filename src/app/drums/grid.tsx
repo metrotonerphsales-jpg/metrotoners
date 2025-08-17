@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { getDrums } from './api'
 import { createCustomFilter } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FilterValues, SelectionValues } from '@/types'
 
 type GridProps = {
 	filters: FilterValues

@@ -1,3 +1,4 @@
+import { FilterValues, SelectionValues } from '@/types'
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -13,6 +14,7 @@ export function filterFalsy<T>(item?: T | null): item is T {
 	return !!item
 }
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export function createFilterValues(
 	attributes: string[],
 	products: Array<Record<string, any>>
@@ -31,6 +33,7 @@ export function createFilterValues(
 	}, {} as FilterValues)
 }
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export function createCustomFilter(selection: SelectionValues) {
 	return (object: Record<string, any>) => {
 		for (const key in selection) {
