@@ -7,6 +7,7 @@ import { getToners } from './api'
 import { createCustomFilter } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FilterValues, SelectionValues } from '@/types'
+import { PRODUCT_TYPE_TO_PATH } from '../search/api'
 
 type GridProps = {
 	filters: FilterValues
@@ -44,7 +45,8 @@ export function Grid({ filters, toners }: GridProps) {
 								price={toner.price}
 								src={toner.images[0].src}
 								alt={toner.images[0].alt ?? ''}
-								url={`/toners/${toner._sys.filename}`}
+								url={toner.url}
+								siteUrl={`/${PRODUCT_TYPE_TO_PATH[toner.__typename]}/${toner._sys.filename}`}
 							/>
 						</motion.div>
 					))}

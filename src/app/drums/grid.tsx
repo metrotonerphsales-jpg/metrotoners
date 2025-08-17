@@ -44,7 +44,8 @@ export function Grid({ filters, drums }: GridProps) {
 								price={drum.price}
 								src={drum.images[0].src}
 								alt={drum.images[0].alt ?? ''}
-								url={`/drums/${drum._sys.filename}`}
+								url={drum.url}
+								siteUrl={`/drums/${drum._sys.filename}`}
 							/>
 						</motion.div>
 					))}

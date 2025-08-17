@@ -1,19 +1,11 @@
 'use client'
 
 import { ProductBlock } from '@/components/product-block'
-import { searchProducts } from './api'
+import { PRODUCT_TYPE_TO_PATH, SearchProductsResults } from './api'
 import { motion, AnimatePresence } from 'framer-motion'
 
 type GridProps = {
-	products: NonNullable<Awaited<ReturnType<typeof searchProducts>>>
-}
-
-type ProductTypes = GridProps['products'][0]['__typename']
-
-const paths: Record<ProductTypes, string> = {
-	Toner: 'toners',
-	Drum: 'drums',
-	MaintenanceBox: 'maintenance-boxes',
+	products: SearchProductsResults
 }
 
 export function Grid({ products }: GridProps) {
@@ -35,7 +27,8 @@ export function Grid({ products }: GridProps) {
 							price={p.price}
 							src={p.images[0].src}
 							alt={p.images[0].alt ?? ''}
-							url={`/${paths[p.__typename]}/${p._sys.filename}`}
+							url={p.url}
+							siteUrl={`/${PRODUCT_TYPE_TO_PATH[p.__typename]}/${p._sys.filename}`}
 						/>
 					</motion.div>
 				))}

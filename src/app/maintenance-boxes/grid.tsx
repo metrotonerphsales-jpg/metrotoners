@@ -7,6 +7,7 @@ import { getBoxes } from './api'
 import { createCustomFilter } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FilterValues, SelectionValues } from '@/types'
+import { PRODUCT_TYPE_TO_PATH } from '../search/api'
 
 type GridProps = {
 	filters: FilterValues
@@ -29,9 +30,9 @@ export function Grid({ filters, boxes }: GridProps) {
 			</aside>
 			<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 				<AnimatePresence mode="sync">
-					{filtered.map(boxes => (
+					{filtered.map(box => (
 						<motion.div
-							key={boxes.name}
+							key={box.name}
 							layout
 							initial={{ opacity: 0, scale: 0.95 }}
 							animate={{ opacity: 1, scale: 1 }}
@@ -39,12 +40,13 @@ export function Grid({ filters, boxes }: GridProps) {
 							transition={{ duration: 0.3 }}
 						>
 							<ProductBlock
-								title={boxes.name}
-								subtitle={boxes.make}
-								price={boxes.price}
-								src={boxes.images[0].src}
-								alt={boxes.images[0].alt ?? ''}
-								url={`/maintenance-boxes/${boxes._sys.filename}`}
+								title={box.name}
+								subtitle={box.make}
+								price={box.price}
+								src={box.images[0].src}
+								alt={box.images[0].alt ?? ''}
+								url={box.url}
+								siteUrl={`/${PRODUCT_TYPE_TO_PATH[box.__typename]}/${box._sys.filename}`}
 							/>
 						</motion.div>
 					))}
