@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 	keywords: ['toner', 'ink', 'drum', 'maintenance box'],
 	applicationName: 'Metrotoners',
 	category: 'stationery',
+	metadataBase: new URL('https://metrotoners.vercel.app'),
 }
 
 export const viewport: Viewport = {
