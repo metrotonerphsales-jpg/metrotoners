@@ -1,5 +1,6 @@
 import { defineConfig } from 'tinacms'
-import { imageArraySchema, imageSchema } from './schema/image'
+import { imageArraySchema } from './schema/image'
+import { contentSectionArraySchema } from './schema/content-section'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -85,6 +86,19 @@ export default defineConfig({
 						create: false,
 						delete: false,
 					},
+				},
+			},
+			{
+				name: 'HomePage',
+				label: 'Home Page',
+				path: 'content/pages/home',
+				fields: [imageArraySchema, contentSectionArraySchema],
+				ui: {
+					allowedActions: {
+						create: false,
+						delete: false,
+					},
+					router: () => '/',
 				},
 			},
 			{
